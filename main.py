@@ -1,16 +1,19 @@
-# This is a sample Python script.
+todos = []
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+while True:
+    user_action = input("Type add or show, or exit: ").strip()
 
+    match user_action:
+        case 'add':
+            todo = input("Enter a todo: ")
+            todos.append(todo)
+        case 'show' | 'display':
+            for item in todos:
+                item = item.title()
+                print(item)
+        case 'exit':
+            break
+        case _:
+            print("You entered an unknown command. Try again.")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("Bye")
